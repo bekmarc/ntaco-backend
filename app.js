@@ -8,17 +8,17 @@ require('dotenv/config');
 const api = process.env.API_URL
 
 //Routes
-const ProductRouter = require('./routers/products');
+const ProductRouter = require('./routers/products');  
 
 
 // Cross Origin Allows
 app.use(cors());
-app.use('*', cors());
+app.use('*', cors());  
 
-
+  
 //Middlware
 app.use(express.json());
-app.use(morgan('tiny'));
+app.use(morgan('tiny'));  
 
 //Routers
 app.use(`${api}/products`, ProductRouter);
