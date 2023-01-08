@@ -1,4 +1,4 @@
-const Product = require('../models/product')
+const Product = require('../models/product').Product
 const express = require('express');
 const router = express.Router();
 
@@ -15,7 +15,7 @@ router.get(`/`, async (req, res) => {
         });
     }
 
-    res.send(products);
+    // res.send(products);
     // products.then(allProd  => {
     //     res.status(201).json({
     //            status: true,
@@ -29,6 +29,7 @@ router.get(`/`, async (req, res) => {
 
 //http://localhost:3000/api/v1/products  POST
 router.post(`/`, (req, res) => {
+    console.log(req.body)
     const product = new Product({
         id: req.body.id,
         name: req.body.name,
