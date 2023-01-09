@@ -9,6 +9,7 @@ const api = process.env.API_URL
 
 //Routes
 const ProductRouter = require('./routers/products');  
+const CategoryRouter = require('./routers/categories');  
 
 
 // Cross Origin Allows
@@ -22,6 +23,8 @@ app.use(morgan('tiny'));
 
 //Routers
 app.use(`${api}/products`, ProductRouter);
+app.use(`${api}/categories`, CategoryRouter);
+
 
 mongoose.set('strictQuery',false);
 mongoose.connect(`${process.env.CONNECTING_MDB_STR}`).then(() => {
